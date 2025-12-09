@@ -37,7 +37,7 @@ if submit_button and uploaded_file and question and deepseek_api_key:
     with st.spinner("AI正在思考中，请稍等..."):
         response = qa_agent(deepseek_api_key, session_id, uploaded_file, question)
 
-    st.write("### 答案")
+    st.write(f"#### 根据您提供的《{uploaded_file.name}》，为您生成的答案如下:")
     st.write(response)
     st.session_state["chat_history"].append(("用户", question))
     st.session_state["chat_history"].append(("AI", response))
